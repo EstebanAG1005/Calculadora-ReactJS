@@ -28,7 +28,9 @@ function Calculator() {
   };
 
   useEffect(() => {
-    const btns = Array.from(btnsRef.current.querySelectorAll('button'));
+    const actual = btnsRef.current;
+    console.log(actual);
+    const btns = Array.from(actual.querySelectorAll('button'));
     btns.forEach((e) => e.style.height = `${e.offsetWidth}px`);
   }, []);
 
@@ -114,7 +116,7 @@ function Calculator() {
           cloneNode.innerHTML = 'Syntax err';
         }, 200);
       } finally {
-        console.warn('calc complete');
+        console.log('calc complete');
       }
     }
   };
